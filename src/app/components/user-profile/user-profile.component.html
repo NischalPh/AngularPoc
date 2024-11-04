@@ -1,0 +1,35 @@
+<p>user-profile works!</p>
+<p> Name = {{name}}</p>
+<p>Age = {{age}}</p>
+
+<!-- property binding -->
+<button [disabled]="isDisabled"> Click me</button>
+
+<!-- Event binding  -->
+<p>Two way property binding :: {{message}}</p>
+<!-- <input type="text" [value]="message" (input)="testFunction($event)"> -->
+<input type="text" [(ngModel)]="message">
+
+<h3>Users list</h3>
+<!-- Control flow statements introduced from angular 17 -->
+<div>
+    @for (user of users; track user.name){
+    @if (user.age>30) {
+    <h5>User name = {{user.name}} Age = {{user.age}} Profession = {{user.profession}}</h5>
+    } @else if(user.age===30) {
+    <h5>User name = {{user.name}} Age = {{user.age}} </h5>
+    }
+    }
+</div>
+
+<hr />
+
+<!-- Using directives , used on html elements -->
+<div *ngFor="let user of users">
+    <h5 *ngIf="user.age>30; else elseCondition">User name = {{user.name}} Age = {{user.age}} Profession =
+        {{user.profession}}</h5>
+
+    <ng-template #elseCondition>
+        <h5>User name = {{user.name}} Age = {{user.age}} </h5>
+    </ng-template>
+</div>
