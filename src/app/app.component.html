@@ -1,3 +1,2 @@
 <h1>Hello from , {{title}}</h1>
-<h1>Using newly created user prfile component by selector.</h1>
-<!-- <app-user-profile></app-user-profile> -->
+<app-user-profile *ngFor="let u of users" [userName] = "u.name" ></app-user-profile>
