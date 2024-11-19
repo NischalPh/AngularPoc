@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 
@@ -49,5 +49,13 @@ export class UserProfileComponent {
 
 
 
-  @Input({transform: transformData }) userName = ""
+  @Input({ transform: transformData }) userName = ""
+
+  @Output() childToParentEventEmitter = new EventEmitter<string>();
+
+  sendDataToParent(name: string) {
+    this.childToParentEventEmitter.emit(name);
+  }
 }
+
+

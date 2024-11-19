@@ -22,4 +22,9 @@ export class AppComponent {
   {
     name: "Hari"
   }]
+
+  addToParentArray(uN: string) {
+    let newUser = { name: uN }
+    this.users.push(newUser);
+  }
 }

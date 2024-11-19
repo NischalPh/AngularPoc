@@ -40,3 +40,6 @@
 <ng-template #elseCondition>
     <h5>Data passed from parent component at ELSE condition - {{userName}}</h5>
 </ng-template>
+
+<input type="text" #name>
+<button type="button" (click)="sendDataToParent(name.value)"> Send user to parent component</button>
