@@ -9,7 +9,9 @@
  <input type="text" [value]="message" (input)="testFunction($event)"> 
 <input type="text" [(ngModel)]="message">
 
-<h3>Users list</h3>
+-->
+
+<!-- <h3>Users list</h3>
  // Control flow statements introduced from angular 17 
 <div>
     @for (user of users; track user.name){
@@ -21,22 +23,24 @@
     }
 </div>
 
-<hr />
+<hr /> -->
 
-// Using directives , used on html elements 
+Using directives , used on html elements 
+
 <div *ngFor="let user of users">
-    <h5 *ngIf="user.age>30; else elseCondition">User name = {{user.name}} Age = {{user.age}} Profession =
-        {{user.profession}}</h5>
+    <h5 *ngIf="user.Salary>300000; else elseCondition">User name = {{user.name | titlecase}} Salary = {{user.Salary}} Profession =
+        {{user.profession}}
+    Phone Number = {{user.phoneNumber | countryCodePipe: 'Nepal'}}</h5>
 
     <ng-template #elseCondition>
-        <h5>User name = {{user.name}} Age = {{user.age}} </h5>
+        <h5>User name = {{user.name | uppercase}} Salary = {{user.Salary | currency:'NPR':'symbol-narrow':'4.2-2'}} </h5>
     </ng-template>
-</div> -->
+</div> 
 
 <!-- Data passing from parent to chlid using @Input. -->
-<h3 *ngIf="userName==='Ram Phuyal'; else elseCondition"> Data passed from parent component in IF condition- {{userName}}
+<!-- <h3 *ngIf="userName==='Ram Phuyal'; else elseCondition"> Data passed from parent component in IF condition- {{userName}}
 </h3>
 
 <ng-template #elseCondition>
     <h5>Data passed from parent component at ELSE condition - {{userName}}</h5>
-</ng-template>
+</ng-template> -->
