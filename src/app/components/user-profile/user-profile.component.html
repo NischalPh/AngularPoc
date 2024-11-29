@@ -28,7 +28,7 @@
 Using directives , used on html elements 
 
 <div *ngFor="let user of users">
-    <h5 *ngIf="user.Salary>300000; else elseCondition">User name = {{user.name | titlecase}} Salary = {{user.Salary}} Profession =
+    <h5 highLight *ngIf="user.Salary>300000; else elseCondition">User name = {{user.name | titlecase}} Salary = {{user.Salary}} Profession =
         {{user.profession}}
     Phone Number = {{user.phoneNumber | countryCodePipe: 'Nepal'}}</h5>
 

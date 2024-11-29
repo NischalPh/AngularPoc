@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CountryCodePipePipe } from '../../pipes/country-code-pipe.pipe';
+import { HighlightDirective } from '../../directives/highlight-directive.directive';
 
 
 function transformData(params: string) {
@@ -11,7 +12,7 @@ function transformData(params: string) {
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [FormsModule, CommonModule, CountryCodePipePipe],
+  imports: [FormsModule, CommonModule, CountryCodePipePipe, HighlightDirective],
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.scss'
 })
